@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Propertys{% endblock %}
+
+{% block body %}
+    <h1>Propertys</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ property.id }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ property.etat }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ property.description }}</td>
+            </tr>
+            <tr>
+                <th>Surface</th>
+                <td>{{ property.surface }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ property.prix }}</td>
+            </tr>
+            <tr>
+                <th>Chambres</th>
+                <td>{{ property.chambres }}</td>
+            </tr>
+            <tr>
+                <th>Salle_bains</th>
+                <td>{{ property.salleBains }}</td>
+            </tr>
+            <tr>
+                <th>Etages</th>
+                <td>{{ property.etages }}</td>
+            </tr>
+            <tr>
+                <th>Nomre_etages</th>
+                <td>{{ property.nomreEtages }}</td>
+            </tr>
+            <tr>
+                <th>Internet</th>
+                <td>{{ property.internet ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Garage</th>
+                <td>{{ property.garage ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Piscine</th>
+                <td>{{ property.piscine ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Camera</th>
+                <td>{{ property.camera ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ property.updatedAt ? property.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_propertys_index') }}">back to list</a>
+
+    <a href="{{ path('app_propertys_edit', {'id': property.id}) }}">edit</a>
+
+    {{ include('propertys/_delete_form.html.twig') }}
+{% endblock %}

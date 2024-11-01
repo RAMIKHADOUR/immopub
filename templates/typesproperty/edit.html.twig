@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Typesproperty{% endblock %}
+
+{% block body %}
+    <h1>Edit Typesproperty</h1>
+
+    {{ include('typesproperty/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_typesproperty_index') }}">back to list</a>
+
+    {{ include('typesproperty/_delete_form.html.twig') }}
+{% endblock %}

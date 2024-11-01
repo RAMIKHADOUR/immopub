@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Propertys{% endblock %}
+
+{% block body %}
+    <h1>Create new Propertys</h1>
+
+    {{ include('propertys/_form.html.twig') }}
+
+    <a href="{{ path('app_propertys_index') }}">back to list</a>
+{% endblock %}

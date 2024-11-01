@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Propertys index{% endblock %}
+
+{% block body %}
+    <h1>Propertys index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Etat</th>
+                <th>Description</th>
+                <th>Surface</th>
+                <th>Prix</th>
+                <th>Chambres</th>
+                <th>Salle_bains</th>
+                <th>Etages</th>
+                <th>Nomre_etages</th>
+                <th>Internet</th>
+                <th>Garage</th>
+                <th>Piscine</th>
+                <th>Camera</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for property in propertys %}
+            <tr>
+                <td>{{ property.id }}</td>
+                <td>{{ property.etat }}</td>
+                <td>{{ property.description }}</td>
+                <td>{{ property.surface }}</td>
+                <td>{{ property.prix }}</td>
+                <td>{{ property.chambres }}</td>
+                <td>{{ property.salleBains }}</td>
+                <td>{{ property.etages }}</td>
+                <td>{{ property.nomreEtages }}</td>
+                <td>{{ property.internet ? 'Yes' : 'No' }}</td>
+                <td>{{ property.garage ? 'Yes' : 'No' }}</td>
+                <td>{{ property.piscine ? 'Yes' : 'No' }}</td>
+                <td>{{ property.camera ? 'Yes' : 'No' }}</td>
+                <td>{{ property.updatedAt ? property.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_propertys_show', {'id': property.id}) }}">show</a>
+                    <a href="{{ path('app_propertys_edit', {'id': property.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="15">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_propertys_new') }}">Create new</a>
+{% endblock %}

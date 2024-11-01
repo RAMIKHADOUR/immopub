@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Typesproperty{% endblock %}
+
+{% block body %}
+    <h1>Create new Typesproperty</h1>
+
+    {{ include('typesproperty/_form.html.twig') }}
+
+    <a href="{{ path('app_typesproperty_index') }}">back to list</a>
+{% endblock %}
