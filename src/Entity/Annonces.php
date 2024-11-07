@@ -34,6 +34,7 @@ class Annonces
 
     #[ORM\ManyToOne(inversedBy: 'annonces')]
     private ?Users $user = null;
+    
 
     public function getId(): ?int
     {
@@ -105,4 +106,5 @@ class Annonces
         return $this->title;
       
     }
+
 }

@@ -31,10 +31,7 @@ class PropertysType extends AbstractType
             ->add('updatedAt', null, [
                 'widget' => 'single_text',
             ])
-            ->add('annonce', EntityType::class, [
-                'class' => Annonces::class,
-                'choice_label' => 'id',
-            ])
+           
             ->add('categorys', EntityType::class, [
                 'class' => Categorys::class,
                 'choice_label' => 'id',

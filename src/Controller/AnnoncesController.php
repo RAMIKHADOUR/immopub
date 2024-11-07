@@ -22,6 +22,8 @@ final class AnnoncesController extends AbstractController
         ]);
     }
 
+  
+
     #[Route('/new', name: 'app_annonces_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
